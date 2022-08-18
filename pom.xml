@@ -21,6 +21,12 @@
             <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>3.6.28</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -62,9 +68,15 @@
                         <configuration>
                             <rules>
                                 <rule>
+                                    <element>CLASS</element>
+                                    <excludes>
+                                        <exclude>*Product</exclude>
+                                        <exclude>*Book</exclude>
+                                        <exclude>*Smartphone</exclude>
+                                    </excludes>
                                     <limits>
                                         <limit>
-                                            <counter>BRANCH</counter>
+                                            <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
                                             <minimum>100%</minimum>
                                         </limit>
