@@ -52,4 +52,20 @@ public class ProductManagerTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void shouldFindByAuthor() {
+        Product[] expected = {book2};
+        Product[] actual = manager.searchBy("Айрен Ренд");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldFindByManufacturer() {
+        Product[] expected = {smartphone1};
+        Product[] actual = manager.searchBy("Apple");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }

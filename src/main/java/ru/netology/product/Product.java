@@ -33,4 +33,12 @@ protected int price;
     public void setPrice(int price) {
         this.price = price;
     }
+
+    public boolean matches(String search) {
+        if (getName().contains(search)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
