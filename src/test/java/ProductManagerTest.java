@@ -2,9 +2,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.product.*;
-import org.mockito.Mockito;
 
-import static org.mockito.Mockito.*;
 
 public class ProductManagerTest {
     ProductRepository repo = new ProductRepository();
