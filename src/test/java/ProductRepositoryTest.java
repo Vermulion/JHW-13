@@ -8,10 +8,12 @@ public class ProductRepositoryTest {
     Product smartphone1 = new Smartphone(11, "Phones", 70990, "iPhone 15Pro", "Apple");
 
     @Test
-    public void shouldAddProducts() {
+    public void shouldAddProducts() { //Элементы добавляются успешно
+
         ProductRepository repo = new ProductRepository();
         repo.save(book1);
         repo.save(smartphone1);
+
         repo.getProducts();
 
         Product[] expected = {book1, smartphone1};
@@ -41,6 +43,17 @@ public class ProductRepositoryTest {
 
         Assertions.assertThrows(NotFoundException.class, () -> {
             repo.removeById(7);
+        });
+    }
+
+    @Test
+    public void shouldGetAlreadyExistsException() {
+        ProductRepository repo = new ProductRepository();
+        repo.save(book1);
+        repo.save(smartphone1);
+
+        Assertions.assertThrows(AlreadyExistsException.class, () -> {
+            repo.save(smartphone1);
         });
     }
 
